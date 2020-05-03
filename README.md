@@ -6,17 +6,17 @@
 
 ----
 ## 3 Axis Gyro
-I used a couple existing libraries for arduino and raspi to put together this class. As you can see if outputs a dict of the xyz coordinates of the sensor.
+I used a couple existing scripts for arduino and raspi to put together this class. As you can see it outputs a dict of the xyz values of the sensor.
 
 ----
 ## Usage
 
-Instantiate I2C device, scan bus for i2c address, instantiate gyro object, run xyz_values method.
+Instantiate I2C device, scan bus for i2c address, instantiate gyro object, run xyz_values method. Create loop to stream data.
 
 ```python
 from machine import Pin, I2C
 from gy50 import GY50
-i2c = I2C(scl=Pin(22), Pin(21))
+i2c = I2C(scl=Pin(22), sda=Pin(21))
 i2c.scan()
 >>> [105]
 address = 105
