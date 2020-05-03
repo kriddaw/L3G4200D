@@ -5,8 +5,10 @@
 
 
 ----
-## 3 Axis Gyro
+## I2C 3 Axis Gyro on ESP32 Microcontroller
 I used a couple existing scripts for arduino and raspi to put together this class. As you can see it outputs a dict of the xyz values of the sensor.
+
+![alt text](https://github.com/kriddaw/L3G4200D/raw/master/esp32-gy50.jpg)
 
 ----
 ## Usage
