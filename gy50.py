@@ -53,8 +53,8 @@ class GY50:
                                 bytearray([0b00000000]))
 
     @staticmethod
-    def __twos_compliment(n):
-        # convert two's complement of 16 bit (65536) value
+    def __convert_val(n):
+        # assign sign for 16 bit (65536) value
         if n > 32767:
             n -= 65536
         return n / 10  # convert to floating point number
@@ -63,7 +63,7 @@ class GY50:
         # reads registers and converts to human readable values
         self.device.readfrom_mem_into(self.device_address, axisL, self.dataL)
         self.device.readfrom_mem_into(self.device_address, axisH, self.dataH)
-        val = self.__twos_compliment((self.dataH[0] << 8) | self.dataL[0])
+        val = self.__convert_val((self.dataH[0] << 8) | self.dataL[0])
         return val
 
     def xyz_values(self):
